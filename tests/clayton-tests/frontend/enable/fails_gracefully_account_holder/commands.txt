@@ -1,0 +1,4 @@
+login
+admin
+enable
+this is a very long string

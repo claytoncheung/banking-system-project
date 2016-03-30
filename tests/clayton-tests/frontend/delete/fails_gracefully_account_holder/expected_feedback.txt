@@ -1,0 +1,15 @@
+Welcome to Generic Bank.
+Enter "login" to begin.
+
+> 
+Enter login type ("standard" or "admin"): 
+Hello, admin.
+
+> 
+Enter the account holder's name: 
+Error: Name entered is not valid.
+
+Enter the account holder's name: 
+Error: Account holder not found.
+
+Enter the account holder's name: 

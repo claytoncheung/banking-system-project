@@ -1,0 +1,15 @@
+Welcome to Generic Bank.
+Enter "login" to begin.
+
+> 
+Enter login type ("standard" or "admin"): 
+Enter your name: 
+Hello, John Doe.
+
+> 
+Enter the account number to withdraw funds from: 
+Enter the account number to deposit funds to: 
+Enter the amount ($0.01 - $99999.99): $
+Error: Insufficient funds.
+
+Enter the amount ($0.01 - $99999.99): $

@@ -1,0 +1,14 @@
+login
+standard
+John Doe
+withdrawal
+00001
+395.00
+cancel
+logout
+login
+standard
+Jane Doe
+withdrawal
+00002
+395.00

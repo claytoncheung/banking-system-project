@@ -1,0 +1,15 @@
+Welcome to Generic Bank.
+Enter "login" to begin.
+
+> 
+Enter login type ("standard" or "admin"): 
+Enter your name: 
+Hello, John Doe.
+
+> 
+Enter the account number: 
+Which company will you be paying? (EC, CQ, or TV): 
+Enter the amount ($0.01 - $99999.99): $
+Error: Insufficient funds.
+
+Enter the amount ($0.01 - $99999.99): $

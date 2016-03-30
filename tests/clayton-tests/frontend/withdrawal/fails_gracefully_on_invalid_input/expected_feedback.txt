@@ -1,0 +1,32 @@
+Welcome to Generic Bank.
+Enter "login" to begin.
+
+> 
+Enter login type ("standard" or "admin"): 
+Enter your name: 
+Hello, John Doe.
+
+> 
+Enter the account number: 
+Error: Account not found.
+
+Enter the account number: 
+Error: Account not found.
+
+Enter the account number: 
+Error: Account number entered is not valid.
+
+Enter the account number: 
+Enter the amount ($5.00 - $99995.00): $
+Error: Monetary amount entered is not valid.
+
+Enter the amount ($5.00 - $99995.00): $
+Error: Monetary amount entered is not valid.
+
+Enter the amount ($5.00 - $99995.00): $
+Error: Amount must end in 0 or 5. ($350, $420, $55, etc.)
+
+Enter the amount ($5.00 - $99995.00): $
+$400.00 withdrawn successfully.
+
+> 

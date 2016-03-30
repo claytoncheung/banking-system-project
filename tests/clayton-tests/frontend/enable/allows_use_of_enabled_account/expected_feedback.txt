@@ -1,0 +1,19 @@
+Welcome to Generic Bank.
+Enter "login" to begin.
+
+> 
+Enter login type ("standard" or "admin"): 
+Hello, admin.
+
+> 
+Enter the account holder's name: 
+Enter the account number: 
+Account enabled successfully.
+
+> 
+Enter the account holder's name: 
+Enter the account number: 
+Enter the amount ($5.00 - $99995.00): $
+$5.00 withdrawn successfully.
+
+> 

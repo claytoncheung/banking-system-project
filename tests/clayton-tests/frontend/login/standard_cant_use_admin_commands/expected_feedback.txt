@@ -1,0 +1,24 @@
+Welcome to Generic Bank.
+Enter "login" to begin.
+
+> 
+Enter login type ("standard" or "admin"): 
+Enter your name: 
+Hello, John Doe.
+
+> 
+Error: Command requires admin access.
+
+> 
+Error: Command requires admin access.
+
+> 
+Error: Command requires admin access.
+
+> 
+Error: Command requires admin access.
+
+> 
+Error: Command requires admin access.
+
+> 

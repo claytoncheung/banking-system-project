@@ -1,0 +1,7 @@
+login
+standard
+John Doe
+logout
+login
+admin
+logout

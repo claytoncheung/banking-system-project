@@ -1,0 +1,31 @@
+Welcome to Generic Bank.
+Enter "login" to begin.
+
+> 
+Error: Please login first.
+
+> 
+Error: Please login first.
+
+> 
+Error: Please login first.
+
+> 
+Error: Please login first.
+
+> 
+Error: Please login first.
+
+> 
+Error: Please login first.
+
+> 
+Error: Please login first.
+
+> 
+Error: Please login first.
+
+> 
+Error: Please login first.
+
+> 

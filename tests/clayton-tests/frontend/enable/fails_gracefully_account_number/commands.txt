@@ -1,0 +1,6 @@
+login
+admin
+enable
+John Doe
+zero
+0.000001

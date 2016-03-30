@@ -1,0 +1,9 @@
+login
+standard
+John Doe
+deposit
+00001
+100
+100.00
+0.00
+5.00

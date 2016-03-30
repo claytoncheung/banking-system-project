@@ -1,0 +1,24 @@
+Welcome to Generic Bank.
+Enter "login" to begin.
+
+> 
+Enter login type ("standard" or "admin"): 
+Enter your name: 
+Hello, John Doe.
+
+> 
+Enter the account number: 
+Enter the amount ($0.01 - $99999.99): $
+Error: Monetary amount entered is not valid.
+
+Enter the amount ($0.01 - $99999.99): $
+Error: Balance is too high to make deposit.
+
+Enter the amount ($0.01 - $99999.99): $
+Error: Monetary amount entered is not valid.
+
+Enter the amount ($0.01 - $99999.99): $
+$5.00 deposited successfully.
+Funds will be available tomorrow.
+
+> 

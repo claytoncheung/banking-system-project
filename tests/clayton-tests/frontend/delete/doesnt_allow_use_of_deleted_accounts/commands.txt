@@ -1,0 +1,7 @@
+login
+admin
+delete
+John Doe
+1
+withdrawal
+John Doe

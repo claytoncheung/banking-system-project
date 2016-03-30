@@ -1,0 +1,6 @@
+login
+admin
+deposit
+John Doe
+00001
+10.00

@@ -1,0 +1,38 @@
+Welcome to Generic Bank.
+Enter "login" to begin.
+
+> 
+Enter login type ("standard" or "admin"): 
+Enter your name: 
+Hello, John Doe.
+
+> 
+Enter the account number: 
+Enter the amount ($5.00 - $99995.00): $
+$495.00 withdrawn successfully.
+
+> 
+Enter the account number: 
+Enter the amount ($5.00 - $99995.00): $
+Error: You can only withdraw up to $500 in a day. ($5.00 remaining)
+
+Enter the amount ($5.00 - $99995.00): $
+$5.00 withdrawn successfully.
+
+> 
+Enter the account number: 
+Error: You have already withdrawn $500 today. Please try again another day.
+
+> 
+Goodbye, John Doe.
+
+> 
+Enter login type ("standard" or "admin"): 
+Enter your name: 
+Hello, John Doe.
+
+> 
+Enter the account number: 
+Error: You have already withdrawn $500 today. Please try again another day.
+
+> 

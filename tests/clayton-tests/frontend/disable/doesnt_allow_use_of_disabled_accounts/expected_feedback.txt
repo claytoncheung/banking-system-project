@@ -1,0 +1,18 @@
+Welcome to Generic Bank.
+Enter "login" to begin.
+
+> 
+Enter login type ("standard" or "admin"): 
+Hello, admin.
+
+> 
+Enter the account holder's name: 
+Enter the account number: 
+Account disabled successfully.
+
+> 
+Enter the account holder's name: 
+Enter the account number: 
+Error: Account is disabled.
+
+Enter the account number: 

@@ -1,0 +1,7 @@
+login
+admin
+transfer
+John Doe
+00001
+00002
+100.00

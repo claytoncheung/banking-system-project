@@ -1,0 +1,8 @@
+login
+standard
+John Doe
+transfer
+000001
+00001
+00002
+100.00

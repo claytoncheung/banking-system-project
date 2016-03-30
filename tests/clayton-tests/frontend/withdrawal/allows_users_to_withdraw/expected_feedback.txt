@@ -1,0 +1,14 @@
+Welcome to Generic Bank.
+Enter "login" to begin.
+
+> 
+Enter login type ("standard" or "admin"): 
+Enter your name: 
+Hello, John Doe.
+
+> 
+Enter the account number: 
+Enter the amount ($5.00 - $99995.00): $
+$195.00 withdrawn successfully.
+
+> 

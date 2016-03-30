@@ -1,0 +1,8 @@
+login
+standard
+John Doe
+create
+delete
+disable
+enable
+changeplan

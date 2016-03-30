@@ -1,0 +1,13 @@
+login
+standard
+John Doe
+logout
+withdrawal
+transfer
+paybill
+deposit
+create
+delete
+disable
+changeplan
+logout

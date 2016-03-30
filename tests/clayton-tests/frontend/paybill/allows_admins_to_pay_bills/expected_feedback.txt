@@ -1,0 +1,15 @@
+Welcome to Generic Bank.
+Enter "login" to begin.
+
+> 
+Enter login type ("standard" or "admin"): 
+Hello, admin.
+
+> 
+Enter the account holder's name: 
+Enter the account number: 
+Which company will you be paying? (EC, CQ, or TV): 
+Enter the amount ($0.01 - $99999.99): $
+Payment of $200.00 to Credit Card Company Q made successfully.
+
+> 

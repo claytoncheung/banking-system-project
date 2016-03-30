@@ -1,0 +1,28 @@
+Welcome to Generic Bank.
+Enter "login" to begin.
+
+> 
+Enter login type ("standard" or "admin"): 
+Enter your name: 
+Hello, John Doe.
+
+> 
+Enter the account number to withdraw funds from: 
+Enter the account number to deposit funds to: 
+Enter the amount ($0.01 - $99999.99): $
+$800.00 transferred successfully.
+
+> 
+Enter the account number to withdraw funds from: 
+Enter the account number to deposit funds to: 
+Enter the amount ($0.01 - $99999.99): $
+Error: You can only transfer up to $1000 in a day. ($200.00 remaining)
+
+Enter the amount ($0.01 - $99999.99): $
+$200.00 transferred successfully.
+
+> 
+Enter the account number to withdraw funds from: 
+Error: You have already transferred $1000 today. Please try again another day.
+
+Enter the account number to withdraw funds from: 

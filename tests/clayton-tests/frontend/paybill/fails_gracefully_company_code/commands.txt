@@ -1,0 +1,8 @@
+login
+standard
+John Doe
+paybill
+00001
+C
+CQ
+200.00

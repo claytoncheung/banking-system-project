@@ -1,0 +1,12 @@
+login
+standard
+John Doe
+withdrawal
+00002
+002
+potato
+00001
+400
+omelette du fromage
+403.00
+400.00

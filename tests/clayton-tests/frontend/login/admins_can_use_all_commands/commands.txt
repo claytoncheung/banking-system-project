@@ -1,0 +1,12 @@
+login
+admin
+create
+cancel
+delete
+cancel
+disable
+cancel
+enable
+cancel
+changeplan
+cancel

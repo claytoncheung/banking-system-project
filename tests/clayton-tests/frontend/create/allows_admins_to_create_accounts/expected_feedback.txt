@@ -1,0 +1,13 @@
+Welcome to Generic Bank.
+Enter "login" to begin.
+
+> 
+Enter login type ("standard" or "admin"): 
+Hello, admin.
+
+> 
+Enter the account holder's name: 
+Enter the initial balance of the account: $
+Account created successfully.
+
+> 

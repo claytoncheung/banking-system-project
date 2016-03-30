@@ -1,0 +1,12 @@
+Welcome to Generic Bank.
+Enter "login" to begin.
+
+> 
+Enter login type ("standard" or "admin"): 
+Enter your name: 
+Hello, John Doe.
+
+> 
+Error: You are already logged in (use "logout" to log out).
+
+> 

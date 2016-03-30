@@ -1,0 +1,13 @@
+Welcome to Generic Bank.
+Enter "login" to begin.
+
+> 
+Enter login type ("standard" or "admin"): 
+Enter your name: 
+Hello, John Doe.
+
+> 
+Enter the account number to withdraw funds from: 
+Error: Account must be one of your own accounts.
+
+Enter the account number to withdraw funds from: 
