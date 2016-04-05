@@ -1,6 +1,7 @@
 //Class for taking the current accounts withing the system and creating
 //the new current accounts and master accounts files
 //Created from main and interfaces with the Accounts class
+package backend;
 
 import java.util.ArrayList;
 import java.io.BufferedWriter;

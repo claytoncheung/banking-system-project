@@ -1,5 +1,7 @@
 //Class to represent a transaction within the system
 //Used with currentData and TransactionHandler
+package backend;
+
 public class Transaction {
 
 //all variables needed to represent a transaction

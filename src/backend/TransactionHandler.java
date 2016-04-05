@@ -1,6 +1,7 @@
 //Class for applying the transactions to the accounts
 //Interaces with Accounts and Transactions
 //Requires data to be created from currentData and then passed
+package backend;
 
 import java.util.ArrayList;
 

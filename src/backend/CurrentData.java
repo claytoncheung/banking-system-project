@@ -1,6 +1,7 @@
 //Class for reading in the current data from both accounts and transaction files
 //Interacts with Transactions and Accounts
 //Created from inside the main
+package backend;
 
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;

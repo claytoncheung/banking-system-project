@@ -1,5 +1,6 @@
 //class to represent an account within the system
 //Interacts with all classes as the main data type
+package backend;
 
 public class Account {
 
