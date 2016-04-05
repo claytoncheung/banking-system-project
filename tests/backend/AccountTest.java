@@ -34,7 +34,6 @@ public class AccountTest {
 	// }
 	
 	@Test
-	//Tests the toString() function in the Account class
 	//Tests the toString() function
 	public void testToString() {
 		
