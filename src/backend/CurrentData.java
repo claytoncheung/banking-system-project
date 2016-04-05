@@ -8,6 +8,7 @@ import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Scanner;
 import java.util.StringTokenizer;
 
 public class CurrentData {
@@ -24,8 +25,12 @@ public void getCurrentAccounts(){
 	String[] strArray = new String[7];
 	accounts.add(0, new Account(00000,"ADMIN ACC",true,0,0,false));
 	
+	Scanner in = new Scanner(System.in);
+	System.out.println("Enter Accounts File Name: ");
+	String fileName = in.nextLine();
+	
 	try {
-		FileReader fileReader = new FileReader("OldMasterBankAccounts.dat");
+		FileReader fileReader = new FileReader(fileName);
 		BufferedReader bufferedReader = new BufferedReader(fileReader);
 
 		//tokenize each line of file into the data we need for the Account class
@@ -64,10 +69,10 @@ public void getCurrentAccounts(){
 	}
 	//Gracefully handle any errors
 	catch(FileNotFoundException e) {
-		System.out.println( "Unable to open file OldMasterBankAccounts.dat. Please make sure file is in the Project folder.");
+		System.out.println( "Unable to open Accounts file. Please make sure file is in the Project folder.");
 	}
 	catch(IOException e) {
-		System.out.println("Error reading file OldMasterBankAccounts.dat");
+		System.out.println("Error reading Accounts file.");
 	}
 }
 
@@ -77,8 +82,12 @@ public void getTransactions(){
 	String[] strArray = new String[6];
 	transactions.add(0, null);
 	
+	Scanner in = new Scanner(System.in);
+	System.out.println("Enter Transactions File Name: ");
+	String fileName = in.nextLine();
+	
 	try {
-		FileReader fileReader = new FileReader("Transactions.trans");
+		FileReader fileReader = new FileReader(fileName);
 		BufferedReader bufferedReader = new BufferedReader(fileReader);
 
 		//tokenize each line of file into the data we need for the Account class
@@ -104,10 +113,10 @@ public void getTransactions(){
 	}
 	//Gracefully handle any errors
 	catch(FileNotFoundException ex1) {
-		System.out.println( "Unable to open file Transactions.trans. Please make sure file is in the Project folder.");
+		System.out.println( "Unable to open transaction file. Please make sure file is in the Project folder.");
 	}
 	catch(IOException ex) {
-		System.out.println("Error reading file Transactions.trans");
+		System.out.println("Error reading file transaction file.");
 	}
 }
 
