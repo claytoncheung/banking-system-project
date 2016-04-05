@@ -1,9 +1,12 @@
+package tests.backend;
+
 import org.junit.Test;
 import static org.junit.Assert.*;
 import java.io.*;
 import org.junit.Before;
 import org.junit.After;
 import java.util.ArrayList;
+import backend.Account;
 
 public class AccountTest {
 

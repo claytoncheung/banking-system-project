@@ -3,6 +3,7 @@
 *.classpath
 *.project
 build.xml
+bin/frontend/*
 
 # Mobile Tools for Java (J2ME)
 .mtj.tmp/
