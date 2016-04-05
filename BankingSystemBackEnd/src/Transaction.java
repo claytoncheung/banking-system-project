@@ -21,10 +21,10 @@ public String toString(){
 	String theString;
 	String formattedName;
 	//create a string appended with underscores for proper formatting
-	formattedName = accountName + new String(new char[20 - accountName.length()]).replace("\0", "_");
+	formattedName = accountName + new String(new char[20 - accountName.length()]).replace("\0", " ");
 	//merge all the data from the transaction into a proper formatted string
-	theString = String.format("%1$02d",transType) + "_" + String.format("%1$05d",accountNum)+ "_" +
-	            formattedName + "_" + String.format("%1$08.2f",moneyInvolved) + "_" + miscInfo;
+	theString = String.format("%1$02d",transType) + " " + String.format("%1$05d",accountNum)+ " " +
+	            formattedName + " " + String.format("%1$08.2f",moneyInvolved) + " " + miscInfo;
 
 	return theString;
 }

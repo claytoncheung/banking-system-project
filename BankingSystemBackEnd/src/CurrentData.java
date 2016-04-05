@@ -7,6 +7,7 @@ import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.StringTokenizer;
 
 public class CurrentData {
 
@@ -19,36 +20,31 @@ public ArrayList<Transaction> transactions = new ArrayList<Transaction>();
 public void getCurrentAccounts(){
 	boolean active, student;
 	String line = null;
-	String[] strArray = null;
-	accounts.add(0, new Account(00000,"ADMIN",true,0,0,false));
-	//begin the readin from accounts file
+	String[] strArray = new String[7];
+	accounts.add(0, new Account(00000,"ADMIN ACC",true,0,0,false));
+	
 	try {
 		FileReader fileReader = new FileReader("OldMasterBankAccounts.dat");
 		BufferedReader bufferedReader = new BufferedReader(fileReader);
 
 		//tokenize each line of file into the data we need for the Account class
 		while((line = bufferedReader.readLine()) != null) {
-			strArray = line.split("_");
-
-			for ( int i=0; i<6; i++) {
-				int j = i;
-				while(j < strArray.length && strArray[j].isEmpty()) {
-					j++;
-				}
-				if(j>i && j<strArray.length) {
-					strArray[i] = strArray[j];
-					strArray[j] = "";
-				}
-			}
-
-			if ( strArray[2].equals("A")) {
+			int i = 0;
+			StringTokenizer st = new StringTokenizer(line);
+		    while (st.hasMoreTokens()) {
+		    	strArray[i] = st.nextToken();
+		    	i++;
+		    }
+		    strArray[1] = strArray[1] + " " + strArray[2];
+	
+			if ( strArray[3].equals("A")) {
 				active = true;
 			}
 			else {
 				active = false;
 			}
 
-			if ( strArray[5].equals("S")) {
+			if ( strArray[6].equals("S")) {
 				student = true;
 			}
 			else {
@@ -56,15 +52,14 @@ public void getCurrentAccounts(){
 			}
 
 			//Create a new Account from the data
-			//0 - AccountNum, 1 - AccountName, 3 - Balance, 4 - Total Transaction
+			//0 - AccountNum, 1 - AccountName, 4 - Balance, 5 - Total Transaction
 			Account account = new Account(Integer.parseInt(strArray[0]), strArray[1], active,
-			                              Double.parseDouble(strArray[3]), Integer.parseInt(strArray[4]), student);
-
+			                              Double.parseDouble(strArray[4]), Integer.parseInt(strArray[5]), student);
 			//Add new account to the accounts list
 			accounts.add(Integer.parseInt(strArray[0]), account);
 		}
 		bufferedReader.close();
-	System.out.println("Accounts Successfully Read In");
+		System.out.println("Accounts Successfully Read In");
 	}
 	//Gracefully handle any errors
 	catch(FileNotFoundException e) {
@@ -78,31 +73,27 @@ public void getCurrentAccounts(){
 //Read in the transaction files and add them to the transactions log
 public void getTransactions(){
 	String line = null;
-	String[] strArray = null;
+	String[] strArray = new String[6];
 	transactions.add(0, null);
-	//read transaction file and tokenize what we need from it
+	
 	try {
 		FileReader fileReader = new FileReader("Transactions.trans");
 		BufferedReader bufferedReader = new BufferedReader(fileReader);
 
+		//tokenize each line of file into the data we need for the Account class
 		while((line = bufferedReader.readLine()) != null) {
-			strArray = line.split("_");
-
-			for ( int i=0; i<5; i++) {
-				int j = i;
-				while(j < strArray.length && strArray[j].isEmpty()) {
-					j++;
-				}
-				if(j>i && j<strArray.length) {
-					strArray[i] = strArray[j];
-					strArray[j] = "";
-				}
-			}
+			int i = 0;
+			StringTokenizer st = new StringTokenizer(line);
+		    while (st.hasMoreTokens()) {
+		    	strArray[i] = st.nextToken();
+		    	i++;
+		    }
+		    strArray[1] = strArray[1] + " " + strArray[2];
 
 			//Create a new transaction from the information read in
-			//0 - TransNum, 1 - Name, 2 - AccountNum, 3 - Money, 4 - MiscInfo
+			//0 - TransNum, 1 - Name, 3 - AccountNum, 4 - Money, 5 - MiscInfo
 			Transaction trans = new Transaction(Integer.parseInt(strArray[0]), strArray[1],
-			                                    Integer.parseInt(strArray[2]), Double.parseDouble(strArray[3]), strArray[4]);
+			                                    Integer.parseInt(strArray[3]), Double.parseDouble(strArray[4]), strArray[5]);
 
 			//Add transaction to our transaction list
 			transactions.add(trans);

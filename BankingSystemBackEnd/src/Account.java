@@ -25,11 +25,11 @@ public String toString(boolean master){
 	String theString;
 	String formattedName;
 	//create a string appended with underscores for proper formatting
-	formattedName = accountName + new String(new char[20 - accountName.length()]).replace("\0", "_");
+	formattedName = accountName + new String(new char[20 - accountName.length()]).replace("\0", " ");
 	//merge all the data from the account into a proper formatted string
-	theString = String.format("%1$05d",accountNum) + "_" + formattedName + "_" +
-	            ((isActive==true) ? "A" : "D") + "_" + String.format("%1$08.2f",currentBalance) +
-	            ((master==true) ? "_" + String.format("%1$04d",totalTransactions) : "") + "_" + ((isStudent==true) ? "S" : "N");
+	theString = String.format("%1$05d",accountNum) + " " + formattedName + " " +
+	            ((isActive==true) ? "A" : "D") + " " + String.format("%1$08.2f",currentBalance) +
+	            ((master==true) ? " " + String.format("%1$04d",totalTransactions) : "") + " " + ((isStudent==true) ? "S" : "N");
 
 	return theString;
 }

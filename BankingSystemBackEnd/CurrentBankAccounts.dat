@@ -1,18 +1,19 @@
-00000_ADMIN________________A_00000.00_N
-00001_Default User_________A_01000.00_N
-00002_Delete User__________A_00000.00_N
-00003_Deleted User_________A_00000.00_N
-00004_Disable User_________A_00000.00_N
-00005_Disabled User________A_00000.00_N
-00006_Enable User__________D_00010.00_N
-00007_Enabled User_________D_00000.00_N
-00008_Student Account______A_09989.95_S
-00009_Not Student__________A_00000.00_N
-00010_Disable Trans________D_00000.00_N
-00011_Trans Acc____________A_01799.80_N
-00012_Dummy Trans__________A_00200.00_N
-00013_Dan Hope_____________D_00100.00_N
-00014_DanHope______________A_00077.35_N
-00015_Default User_________D_01000.00_N
-00016_Default User_________A_01000.00_N
-00017_Default User_________A_00700.00_N
+00000 ADMIN ACC            A 00000.00 N
+00001 Default User         A 01000.00 N
+00002 Delete User          A 00000.00 N
+00003 Deleted User         A 00000.00 N
+00004 Disable User         A 00000.00 N
+00005 Disabled User        A 00000.00 N
+00006 Enable User          D 00010.00 N
+00007 Enabled User         D 00000.00 N
+00008 Student Account      A 09989.95 S
+00009 Not Student          A 00000.00 N
+00010 Disable Trans        D 00000.00 N
+00011 Trans Acc            A 01799.80 N
+00012 Dummy Trans          A 00200.00 N
+00013 Dan Hope             D 00100.00 N
+00014 Dan ope              A 00077.35 N
+00015 Default User         D 01000.00 N
+00016 Default User         A 01000.00 N
+00017 Default User         A 00700.00 N
+00018 Default User         A 99900.00 N
