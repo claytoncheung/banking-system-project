@@ -30,7 +30,7 @@ BACKEND_JAVA = \
 
 BACKEND_TEST_JAVA = \
 	tests/backend/AccountTest.java \
-	tests/backend/BankAccountWriter.java \
+	tests/backend/BankAccountWriterTest.java \
 	tests/backend/MainTest.java \
 	tests/backend/TransactionHandlerTest.java \
 	tests/backend/TransactionTest.java
@@ -38,7 +38,7 @@ BACKEND_TEST_JAVA = \
 
 BACKEND_TEST_CLASSES = \
 	tests.backend.AccountTest \
-	tests.backend.BankAccountWriter \
+	tests.backend.BankAccountWriterTest \
 	tests.backend.MainTest \
 	tests.backend.TransactionHandlerTest \
 	tests.backend.TransactionTest
@@ -64,7 +64,7 @@ bin/backend/main.class: $(BACKEND_JAVA)
 test_frontend: bin/frontend/frontend
 	@bash -c "cd tests/frontend && ./run_frontend_tests.sh"
 
-test_backend: hamcrest-core-1.3.jar junit-4.12.jar bin/backend/BackEnd.class
+test_backend: hamcrest-core-1.3.jar junit-4.12.jar bin/backend/main.class
 	@javac -classpath ".:bin:junit-4.12.jar:hamcrest-core-1.3.jar" $(BACKEND_TEST_JAVA)
 	@java -classpath ".:bin:junit-4.12.jar:hamcrest-core-1.3.jar" org.junit.runner.JUnitCore $(BACKEND_TEST_CLASSES)
 

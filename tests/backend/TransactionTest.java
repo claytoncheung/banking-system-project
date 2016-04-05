@@ -1,8 +1,14 @@
+package tests.backend;
+
 import org.junit.Test;
 import static org.junit.Assert.*;
 import java.io.*;
 import org.junit.*;
 import java.util.ArrayList;
+import backend.Account;
+import backend.BankAccountWriter;
+import backend.Transaction;
+import backend.TransactionHandler;
 
 public class TransactionTest {
 

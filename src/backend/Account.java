@@ -5,10 +5,10 @@ package backend;
 public class Account {
 
 //All variables needed to represent an account
-int accountNum, totalTransactions;
-String accountName;
-boolean isActive, isStudent;
-double currentBalance;
+public int accountNum, totalTransactions;
+public String accountName;
+public boolean isActive, isStudent;
+public double currentBalance;
 
 //constructor for creating a new account
 public Account(int num, String name, boolean active, double balance, int transactions, boolean student){

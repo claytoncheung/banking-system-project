@@ -1,8 +1,15 @@
+package tests.backend;
+
 import org.junit.Test;
 import static org.junit.Assert.*;
 import java.io.*;
 import org.junit.*;
 import java.util.ArrayList;
+import backend.Account;
+import backend.BankAccountWriter;
+import backend.CurrentData;
+import backend.Transaction;
+import backend.TransactionHandler;
 
 public class TransactionHandlerTest {
 
@@ -68,7 +75,7 @@ public class TransactionHandlerTest {
 		transHandler = new TransactionHandler(accounts, transactions);
 		output = transHandler.HandleTransactions();
 
-		ArrayList<Account> expected = new ArrayList();
+		ArrayList<Account> expected = new ArrayList<>();
 		expected.add(0, new Account(00000, "acc1", true, 949.90, 0002, false));
 
 		if (outContent.toString().contains("Withdrawl Successful")) {
