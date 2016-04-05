@@ -1,12 +1,9 @@
-package tests.backend;
-
 import org.junit.Test;
 import static org.junit.Assert.*;
 import java.io.*;
 import org.junit.Before;
 import org.junit.After;
 import java.util.ArrayList;
-import backend.Account;
 
 public class AccountTest {
 
@@ -30,39 +27,39 @@ public class AccountTest {
 		Account testAcc = new Account(0, "test", true, 1000.00, 0, false);
 		assertEquals("", errContent.toString());
 	}
-	
-	@Test
-	//Tests the toString() function in the Account class
-	public void testToString() {
-		
-		//Condition coverage: master, isActive, isStudent == true
-		String expected = "00000_Test Account_________A_01000.00_0000_S";
-		Account testAcc1 = new Account(0, "Test Account", true, 1000.00, 0, true);
-		String out = testAcc1.toString(true);
-		assertEquals("Not Equal", expected, out);
-		
-		//Condition coverage: isActive == false
-		expected = "00000_Test Account_________D_01000.00_0000_S";
-		testAcc1 = new Account(0, "Test Account", false, 1000.00, 0, true);
-		out = testAcc1.toString(true);
-		assertEquals("Not Disabled", expected, out);
-		
-		//Condition coverage: isStudent == false
-		expected = "00000_Test Account_________A_01000.00_0000_N";
-		testAcc1 = new Account(0, "Test Account", true, 1000.00, 0, false);
-		out = testAcc1.toString(true);
-		assertEquals("Is Student", expected, out);
-		
-		//Condition coverage: master == false
-		expected = "00000_Test Account_________A_01000.00_N";
-		testAcc1 = new Account(0, "Test Account", true, 1000.00, 0, false);
-		out = testAcc1.toString(false);
-		assertEquals("Not Master", expected, out);
-	}
 
 	// @Test
 	// public void testWillAlwaysFail() {
 	//     fail("An error message");
 	// }
-
+	
+	@Test
+	//Tests the toString() function in the Account class
+	//Tests the toString() function
+	public void testToString() {
+		
+		//Condition coverage: master, isActive, isStudent == true
+		String expected = "00000 Test Account         A 01000.00 0000 S";
+		Account testAcc1 = new Account(0, "Test Account", true, 1000.00, 0, true);
+		String out = testAcc1.toString(true);
+		assertEquals("Not Equal", expected, out);
+		
+		//Condition coverage: isActive == false
+		expected = "00000 Test Account         D 01000.00 0000 S";
+		testAcc1 = new Account(0, "Test Account", false, 1000.00, 0, true);
+		out = testAcc1.toString(true);
+		assertEquals("Not Disabled", expected, out);
+		
+		//Condition coverage: isStudent == false
+		expected = "00000 Test Account         A 01000.00 0000 N";
+		testAcc1 = new Account(0, "Test Account", true, 1000.00, 0, false);
+		out = testAcc1.toString(true);
+		assertEquals("Is Student", expected, out);
+		
+		//Condition coverage: master == false
+		expected = "00000 Test Account         A 01000.00 N";
+		testAcc1 = new Account(0, "Test Account", true, 1000.00, 0, false);
+		out = testAcc1.toString(false);
+		assertEquals("Not Master", expected, out);
+	}
 }
