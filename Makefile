@@ -77,3 +77,4 @@ junit-4.12.jar:
 clean:
 	rm bin/frontend/frontend
 	rm bin/backend/*.class
+	rm *.dat
