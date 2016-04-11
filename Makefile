@@ -49,7 +49,7 @@ HAMCREST_JAR_URL = \
 JUNIT_JAR_URL = \
 	http://search.maven.org/remotecontent?filepath=junit/junit/4.12/junit-4.12.jar
 
-.PHONY: all clean test test_frontend test_backend week
+.PHONY: all clean test test_frontend test_backend week accounts
 
 all: bin/frontend/frontend bin/backend/main.class
 
@@ -80,4 +80,8 @@ junit-4.12.jar:
 clean:
 	rm bin/frontend/frontend
 	rm bin/backend/*.class
+	
+accounts:
 	rm *.dat
+	touch CurrentBankAccounts.dat
+	touch MasterBankAccounts.dat

@@ -2,7 +2,7 @@ login
 admin
 create
 Very Very Long Name Illegal
-25.47
+cancel
 create
 Change Plan
 150.83

@@ -1,22 +1,30 @@
 #!/usr/bin/env bash
 
 # Build the frontend and backend.
-pushd ../
+pushd ../ > /dev/null
 make bin/frontend/frontend
 make bin/backend/main.class
-popd
+popd > /dev/null
+
+day=0
 
 function run_day() {
-  day=$1
   directory=day-$day
   session_counter=1
     
   ./run_day.sh $day
 }
 
-for days in $(echo */)
+# For each directory in /transaction_sessions/
+for directory in $(echo */)
 do
-  run_day $days
-  # Move the resulting account files to the next day and rename
+  ((day++))
+  # Move the account files to the current day
+  pushd ../ > /dev/null
+  mv CurrentBankAccounts.dat transaction_sessions/day$day/
+  mv MasterBankAccounts.dat transaction_sessions/day$day/
+  popd > /dev/null
   
+  # And run the day's sessions
+  run_day $day    
 done

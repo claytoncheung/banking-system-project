@@ -3,40 +3,28 @@
 day=$1
 
 # Move to the appropriate directory
-pushd $day > /dev/null
+pushd day$day > /dev/null
 
 function run_session() {
   command_file=$1
   counter=$2
   
-  ../../bin/frontend/frontend CurrentBankAccounts.dat $day_$counter.txt < $command_file.input 2>&1
+  ../../bin/frontend/frontend CurrentBankAccounts.dat $day-$counter.log < $command_file > /dev/null 2>&1
   
   if [ $? -ne 0 ]
   then
-    echo -e "$day-$session_counter crashed the front end.\n"
-    continue
+    echo -e "Day $day-$counter crashed the front end.\n"
   fi
-  
-  # Concatenate transaction logs to day$day.trans
-  for trans_log in *.log
-  do
-    cat $trans_log.log > day-$day.trans
-    #echo -e "Day $day transaction logs have been merged.\n"
-  done
-  
-  # Remove the generated session transaction logs
-  rm *.log
 }
 
 function run_backend() {
   pushd ../../ > /dev/null
   # Run the backend
-  java bin.backend.main CurrentBankAccounts.dat day-$day.trans 2>&1
+  java -cp bin/ backend.main transaction_sessions/$day/MasterBankAccounts.dat transaction_sessions/$day/merged-day$day.trans > /dev/null 2>&1
   
   if [ $? -ne 0 ]
   then
-    echo -e "$day crashed the back end.\n"
-    continue
+    echo -e "Day $day crashed the back end.\n"
   fi
   
   popd > /dev/null
@@ -44,16 +32,28 @@ function run_backend() {
 
 session_counter=1
 
+rm merged-day*.trans > /dev/null
+
 # For each list of transaction commands
-for commands in *.input
+for commands in *.txt
 do
   # Run the session
   run_session $commands $session_counter
   ((session_counter++))
 done
 
+# Concatenate transaction logs to day$day.trans
+for trans_log in *.log
+do
+  cat $trans_log >> merged-day$day.trans
+  #echo -e "Day $day transaction logs have been merged.\n"
+done
+
+# Remove the generated session transaction logs
+rm *.log
+
 run_backend
 
 popd > /dev/null
 
-echo -e "$day has completed.\n"
+echo -e "Day $day has completed.\n"
