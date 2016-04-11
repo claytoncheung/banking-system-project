@@ -27,9 +27,9 @@ public void getCurrentAccounts(String fileName){
 	String line = null;
 	
 	
-//	Scanner in = new Scanner(System.in);
-//	System.out.println("Enter Accounts File Name: ");
-//	String fileName = in.nextLine();
+	//Scanner in = new Scanner(System.in);
+	///System.out.println("Enter Accounts File Name: ");
+	//String fileName = in.nextLine();
 	
 	try {
 		FileReader fileReader = new FileReader(fileName);
@@ -65,7 +65,8 @@ public void getCurrentAccounts(String fileName){
 			else {
 				student = false;
 			}
-
+			
+			
 			//Create a new Account from the data
 			//0 - AccountNum, 1 - AccountName, 4 - Balance, 5 - Total Transaction
 			Account account = new Account(Integer.parseInt(strArray[0]), strArray[1], active,
@@ -91,9 +92,9 @@ public void getTransactions(String fileName){
 	String line = null;
 	transactions.add(0, null);
 	
-//	Scanner in = new Scanner(System.in);
-//	System.out.println("Enter Transactions File Name: ");
-//	String fileName = in.nextLine();
+	//Scanner in = new Scanner(System.in);
+	//System.out.println("Enter Transactions File Name: ");
+	//String fileName = in.nextLine();
 	
 	try {
 		FileReader fileReader = new FileReader(fileName);
@@ -108,26 +109,34 @@ public void getTransactions(String fileName){
 		    	strArray[i] = st.nextToken();
 		    	i++;
 		    }
-		    while(Character.isLetter(strArray[j].charAt(0))){
-		    	j++;
+		    if(strArray[4] == null){
+		    	Transaction trans = new Transaction(Integer.parseInt(strArray[0]), "Admin",
+                        Integer.parseInt(strArray[1]), Double.parseDouble(strArray[2]), strArray[3]);
+		    	transactions.add(trans);
 		    }
-	
-		    for(int k = 2; k < j; k++){
-		    	strArray[1] = strArray[1] + " " + strArray[k];
+		    else {
+		    	while(Character.isLetter(strArray[j].charAt(0))){
+			    	j++;
+			    }
+		
+			    for(int k = 2; k < j; k++){
+			    	strArray[1] = strArray[1] + " " + strArray[k];
+			    }
+			    
+			    
+			    if (strArray[j+2] == null){
+			    	strArray[j+2] = "__";
+			    }
+
+				//Create a new transaction from the information read in
+				//0 - TransNum, 1 - Name, 3 - AccountNum, 4 - Money, 5 - MiscInfo
+				Transaction trans = new Transaction(Integer.parseInt(strArray[0]), strArray[1],
+				                                    Integer.parseInt(strArray[j]), Double.parseDouble(strArray[j+1]), strArray[j+2]);
+				transactions.add(trans);
 		    }
 		    
-		    
-		    if (strArray[j+2] == null){
-		    	strArray[j+2] = "__";
-		    }
 
-			//Create a new transaction from the information read in
-			//0 - TransNum, 1 - Name, 3 - AccountNum, 4 - Money, 5 - MiscInfo
-			Transaction trans = new Transaction(Integer.parseInt(strArray[0]), strArray[1],
-			                                    Integer.parseInt(strArray[j]), Double.parseDouble(strArray[j+1]), strArray[j+2]);
-
-			//Add transaction to our transaction list
-			transactions.add(trans);
+			//Add transaction to our transaction lists
 		}
 		bufferedReader.close();
 		System.out.println("Transactions Succesfully Read In");

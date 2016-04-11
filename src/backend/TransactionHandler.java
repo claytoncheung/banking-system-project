@@ -69,7 +69,7 @@ public Map<Integer, Account> HandleTransactions(){
 			switch(trans.transType) {
 //End of session
 			case 0:
-				System.out.println(curAcc.myToString(true) + " Session Ended");
+				//System.out.println(curAcc.myToString(true) + " Session Ended");
 				//End our session with current account;
 				curAcc = null;
 				break;
@@ -187,7 +187,7 @@ public Map<Integer, Account> HandleTransactions(){
 				}
 //Create - Admin -- 
 			case 5:
-				int newNum = accounts.size();
+				int newNum = accounts.size() + 1;
 				Account newAccount = new Account(newNum, trans.accountName, true, trans.moneyInvolved, 0, false);
 				accounts.put(newNum, newAccount);
 				System.out.println("Account Created");
@@ -266,7 +266,12 @@ public Map<Integer, Account> HandleTransactions(){
 					}
 					//display which account is logged in
 					System.out.println(curAcc.myToString(true) + " Session Started "+((adminSession==true) ? "Admin" : "Standard"));
-				}else{
+				}
+				else if(trans.accountName.equals("Admin")){
+					adminSession = true;
+					System.out.println("Admin Session");
+				}
+				else{
 					System.out.println("Invalid Account");
 				}
 				break;
