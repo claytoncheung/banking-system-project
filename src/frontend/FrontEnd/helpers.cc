@@ -3,6 +3,7 @@
 #include <iostream>
 #include <iomanip>
 #include <regex>
+#include <string>
 
 static const std::regex accountNumberRegex("\\d{1,5}");
 static const std::regex amountRegex("(\\d{0,5})\\.(\\d{2})");
@@ -144,7 +145,8 @@ bool FrontEnd::promptForAccountHolder(std::string* accountHolder,
       continue;
     }
 
-    if (accountHolderTemp.length() > MAX_ACCOUNT_HOLDER_NAME_LEN) {
+    if (mustAlreadyExist && accountHolderTemp.length() > 
+        MAX_ACCOUNT_HOLDER_NAME_LEN) {
       std::cout << MESSAGE_ERROR_INVALID_NAME << std::endl << std::endl;
       continue;
     }
@@ -153,6 +155,11 @@ bool FrontEnd::promptForAccountHolder(std::string* accountHolder,
       std::cout << MESSAGE_ERROR_MISSING_ACCOUNT_HOLDER
                 << std::endl << std::endl;
       continue;
+    }
+    
+    if (!mustAlreadyExist && accountHolderTemp.length() > 
+        MAX_ACCOUNT_HOLDER_NAME_LEN) {
+      accountHolderTemp = accountHolderTemp.substr(0, MAX_ACCOUNT_HOLDER_NAME_LEN);
     }
 
     break;
