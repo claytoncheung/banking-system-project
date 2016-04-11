@@ -13,9 +13,9 @@ public static void main(String[] args){
 	//Start by reading in current data from transactions and old master
 	CurrentData data = new CurrentData();
 	//get the accounts from the master accounts file
-	data.getCurrentAccounts();
+	data.getCurrentAccounts(args[0]);
 	//get the transactions from the transaction log
-	data.getTransactions();
+	data.getTransactions(args[1]);
 	
 
 	//Process transactions that have been read in by currentData
