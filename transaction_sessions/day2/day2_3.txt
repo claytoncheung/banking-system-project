@@ -1,0 +1,27 @@
+login
+admin
+create
+Barry Allen
+999.90
+withdrawal
+Withdraw Account
+00012
+400.00
+logout
+login
+standard
+John Random New
+paybill
+00006
+CQ
+5.00
+deposit
+00006
+100.00
+logout
+login
+standard
+Bruce Wayne
+withdrawal
+225.00
+logout

@@ -1,0 +1,12 @@
+login
+admin
+create
+Default User
+100.10
+create
+New Account
+1000.33
+create
+Malek Abdu
+500.00
+logout

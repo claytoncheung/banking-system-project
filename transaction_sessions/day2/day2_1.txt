@@ -1,0 +1,28 @@
+login
+standard
+Default User
+deposit
+00001
+150.00
+withdrawal
+00001
+50.00
+logout
+login
+admin
+changeplan
+Change Plan
+00008
+withdrawal
+Bruce Wayne
+00015
+500.00
+logout
+login
+standard
+New Account
+paybill
+00002
+EC
+89.72
+logout

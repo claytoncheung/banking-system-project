@@ -1,0 +1,12 @@
+login
+admin
+create
+Enable Account
+25.01
+create
+Deposit Account
+700.70
+create
+Withdraw Account
+430.00
+logout

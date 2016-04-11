@@ -1,0 +1,12 @@
+login
+admin
+create
+Delete Account
+5.50
+create
+Clark Kent
+99999.99
+create
+Bruce Wayne
+1000.00
+logout

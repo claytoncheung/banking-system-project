@@ -1,0 +1,12 @@
+login
+admin
+create
+Clayton Cheung
+250.25
+create
+Rob Kocov
+1500.00
+create
+John Random New
+10.99
+logout
