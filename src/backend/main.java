@@ -13,9 +13,9 @@ public static void main(String[] args){
 	//Start by reading in current data from transactions and old master
 	CurrentData data = new CurrentData();
 	//get the accounts from the master accounts file
-	data.getCurrentAccounts(args[0]);
+	data.getCurrentAccounts();
 	//get the transactions from the transaction log
-	data.getTransactions(args[1]);
+	data.getTransactions();
 	
 
 	//Process transactions that have been read in by currentData
@@ -30,9 +30,9 @@ public static void main(String[] args){
 	//pass in the new accounts information that we created from the transaction handler
 	BankAccountWriter bankWriter = new BankAccountWriter(newAccounts);
 	//Write new master bank accounts file
-	bankWriter.writeAccounts(true, args[2], args[3]);
+	bankWriter.writeAccounts(true);
 	//Write new current bank accounts file
-	bankWriter.writeAccounts(false, args[2], args[3]);
+	bankWriter.writeAccounts(false);
 
 
 	System.out.println("Execution Complete");

@@ -3,7 +3,6 @@
 //Created from main and interfaces with the Accounts class
 package backend;
 
-//import java.util.ArrayList;
 import java.util.Map;
 import java.io.BufferedWriter;
 import java.io.IOException;
@@ -23,9 +22,9 @@ public BankAccountWriter(Map<Integer, Account> newAccounts){
 
 //create the new account files
 //argument of if you are creating the master or current
-public void writeAccounts(boolean master, String masterName, String currentName){
+public void writeAccounts(boolean master){
 	//create file for master or current based on our argument
-	String filename = (master==true) ? masterName : currentName;
+	String filename = (master==true) ? "MasterBankAccounts.dat" : "CurrentBankAccounts.dat";
 
 	try{
 		//open up file using decided name
