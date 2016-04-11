@@ -1,0 +1,25 @@
+login
+standard
+New Account
+withdrawal
+2
+100.00
+logout
+login
+admin
+changeplan
+Clayton Cheung
+4
+transfer
+Clayton Cheung
+4
+19
+50.00
+logout
+login
+standard
+Mary Jane
+withdrawal
+17
+50.00
+logout

@@ -1,0 +1,27 @@
+login
+standard
+Delete Account
+deposit
+13
+100.00
+logout
+login
+admin
+enable
+Disable Account
+9
+logout
+login
+standard
+Withdraw Account
+deposit
+12
+20.00
+logout
+login
+standard
+Deposit Account
+withdrawal
+11
+100.00
+logout

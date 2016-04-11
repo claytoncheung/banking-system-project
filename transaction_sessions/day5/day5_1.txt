@@ -1,0 +1,22 @@
+login
+admin
+delete
+Very Very Long Name
+7
+logout
+login
+standard
+Bill Gates
+transfer
+18
+19
+1000.00
+logout
+login
+standard
+Mary Jane
+paybill
+17
+TV
+200.00
+logout

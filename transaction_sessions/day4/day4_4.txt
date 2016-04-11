@@ -1,0 +1,19 @@
+login
+admin
+create
+Bill Gates
+99000.00
+logout
+login
+standard
+Clark Kent
+deposit
+14
+15.00
+logout
+login
+admin
+create
+Satoru Iwata
+100.00
+logout

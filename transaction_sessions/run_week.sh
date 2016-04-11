@@ -4,6 +4,7 @@
 pushd ../ > /dev/null
 make bin/frontend/frontend
 make bin/backend/main.class
+make accounts
 popd > /dev/null
 
 day=0

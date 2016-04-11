@@ -1,0 +1,23 @@
+login
+admin
+transfer
+Rob Kocov
+5
+4
+100.00
+logout
+login
+standard
+Clark Kent
+transfer
+14
+17
+1000.00
+logout
+login
+standard
+Change Plan
+deposit
+8
+300.00
+logout

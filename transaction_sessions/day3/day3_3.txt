@@ -1,0 +1,22 @@
+login
+standard
+Barry Allen
+deposit
+16
+50.00
+logout
+login
+standard
+Clayton Cheung
+paybill
+4
+EC
+50.00
+logout
+login
+standard
+Malek Abdu
+withdrawal
+3
+100.00
+logout

@@ -1,0 +1,22 @@
+login
+standard
+Bruce Wayne
+withdrawal
+15
+500.00
+logout
+login
+standard
+Clark Kent
+transfer
+14
+5
+1000.00
+logout
+login
+admin
+changeplan
+New Account
+2
+logout
+

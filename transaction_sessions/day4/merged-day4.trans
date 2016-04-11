@@ -1,0 +1,49 @@
+10                      00000 00000.00 A 
+09 Enable Account       00010 00000.00   
+08 New Account          00002 00000.00   
+00                      00000 00000.00   
+10 Mary Jane            00000 00000.00 S 
+04 Mary Jane            00017 00015.00   
+00 Mary Jane            00000 00000.00   
+10 Barry Allen          00000 00000.00 S 
+01 Barry Allen          00016 00020.00   
+00 Barry Allen          00000 00000.00   
+10                      00000 00000.00 A 
+02 Rob Kocov            00005 00100.00   
+02 Clayton Cheung       00004 00100.00   
+00                      00000 00000.00   
+10 Clark Kent           00000 00000.00 S 
+02 Clark Kent           00014 01000.00   
+02 Mary Jane            00017 01000.00   
+00 Clark Kent           00000 00000.00   
+10 Change Plan          00000 00000.00 S 
+04 Change Plan          00008 00300.00   
+00 Change Plan          00000 00000.00   
+10                      00000 00000.00 A 
+07 Very Very Long Name  00007 00000.00   
+04 Default User         00001 05000.00   
+08 Malek Abdu           00003 00000.00   
+00                      00000 00000.00   
+10 New Account          00000 00000.00 S 
+03 New Account          00002 00500.00 TV
+00 New Account          00000 00000.00   
+10                      00000 00000.00 A 
+05 Bill Gates           00000 99000.00   
+00                      00000 00000.00   
+10 Clark Kent           00000 00000.00 S 
+04 Clark Kent           00014 00015.00   
+00 Clark Kent           00000 00000.00   
+10                      00000 00000.00 A 
+05 Satoru Iwata         00000 00100.00   
+00                      00000 00000.00   
+10 Clayton Cheung       00000 00000.00 S 
+02 Clayton Cheung       00004 00015.25   
+02 Malek Abdu           00003 00015.25   
+00 Clayton Cheung       00000 00000.00   
+10 Malek Abdu           00000 00000.00 S 
+01 Malek Abdu           00003 00100.00   
+01 Malek Abdu           00003 00050.00   
+00 Malek Abdu           00000 00000.00   
+10                      00000 00000.00 A 
+03 Clark Kent           00014 00150.00 CQ
+00                      00000 00000.00   

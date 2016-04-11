@@ -1,0 +1,23 @@
+login
+admin
+enable
+Enable Account
+10
+changeplan
+New Account
+2
+logout
+login
+standard
+Mary Jane
+deposit
+17
+15.00
+logout
+login
+standard
+Barry Allen
+withdrawal
+16
+20.00
+logout

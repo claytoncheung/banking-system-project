@@ -1,0 +1,17 @@
+login
+admin
+create
+Mary Jane
+50.00
+changeplan
+Rob Kocov
+5
+logout
+login
+standard
+John Random New
+deposit
+6
+500.00
+logout
+

@@ -1,0 +1,21 @@
+login
+standard
+Satoru Iwata
+deposit
+19
+1000.00
+logout
+login
+standard
+Bruce Wayne
+paybill
+15
+EC
+57.92
+logout
+login
+admin
+disable
+Disable Account
+9
+logout

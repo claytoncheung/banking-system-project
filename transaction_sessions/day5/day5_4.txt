@@ -1,0 +1,21 @@
+login
+standard
+Rob Kocov
+withdrawal
+5
+125.00
+logout
+login
+standard
+Clayton Cheung
+withdrawal
+4
+85.00
+logout
+login
+standard
+Clark Kent
+paybill
+14
+1999.99
+logout

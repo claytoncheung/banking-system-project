@@ -1,0 +1,46 @@
+10                      00000 00000.00 A 
+06 Very Very Long Name  00007 00000.00   
+00                      00000 00000.00   
+10 Bill Gates           00000 00000.00 S 
+02 Bill Gates           00018 01000.00   
+02 Satoru Iwata         00019 01000.00   
+00 Bill Gates           00000 00000.00   
+10 Mary Jane            00000 00000.00 S 
+03 Mary Jane            00017 00200.00 TV
+00 Mary Jane            00000 00000.00   
+10 Default User         00000 00000.00 S 
+04 Default User         00001 00500.00   
+00 Default User         00000 00000.00   
+10 Delete Account       00000 00000.00 S 
+04 Delete Account       00013 00500.00   
+00 Delete Account       00000 00000.00   
+10 John Random New      00000 00000.00 S 
+04 John Random New      00006 00014.35   
+00 John Random New      00000 00000.00   
+10 Satoru Iwata         00000 00000.00 S 
+04 Satoru Iwata         00019 01000.00   
+00 Satoru Iwata         00000 00000.00   
+10 Bruce Wayne          00000 00000.00 S 
+03 Bruce Wayne          00015 00057.92 EC
+00 Bruce Wayne          00000 00000.00   
+10                      00000 00000.00 A 
+07 Disable Account      00009 00000.00   
+00                      00000 00000.00   
+10 Rob Kocov            00000 00000.00 S 
+01 Rob Kocov            00005 00125.00   
+00 Rob Kocov            00000 00000.00   
+10 Clayton Cheung       00000 00000.00 S 
+01 Clayton Cheung       00004 00085.00   
+00 Clayton Cheung       00000 00000.00   
+10 Clark Kent           00000 00000.00 S 
+10 New Account          00000 00000.00 S 
+01 New Account          00002 00100.00   
+00 New Account          00000 00000.00   
+10                      00000 00000.00 A 
+08 Clayton Cheung       00004 00000.00   
+02 Clayton Cheung       00004 00050.00   
+02 Satoru Iwata         00019 00050.00   
+00                      00000 00000.00   
+10 Mary Jane            00000 00000.00 S 
+01 Mary Jane            00017 00050.00   
+00 Mary Jane            00000 00000.00   
