@@ -22,14 +22,14 @@ public Map<Integer, Account> accounts = new HashMap<Integer, Account>();
 public ArrayList<Transaction> transactions = new ArrayList<Transaction>();
 
 //Reads in the accounts from the current master accounts file
-public void getCurrentAccounts(){
+public void getCurrentAccounts(String fileName){
 	boolean active, student;
 	String line = null;
 	
 	
-	Scanner in = new Scanner(System.in);
-	System.out.println("Enter Accounts File Name: ");
-	String fileName = in.nextLine();
+//	Scanner in = new Scanner(System.in);
+//	System.out.println("Enter Accounts File Name: ");
+//	String fileName = in.nextLine();
 	
 	try {
 		FileReader fileReader = new FileReader(fileName);
@@ -87,13 +87,13 @@ public void getCurrentAccounts(){
 }
 
 //Read in the transaction files and add them to the transactions log
-public void getTransactions(){
+public void getTransactions(String fileName){
 	String line = null;
 	transactions.add(0, null);
 	
-	Scanner in = new Scanner(System.in);
-	System.out.println("Enter Transactions File Name: ");
-	String fileName = in.nextLine();
+//	Scanner in = new Scanner(System.in);
+//	System.out.println("Enter Transactions File Name: ");
+//	String fileName = in.nextLine();
 	
 	try {
 		FileReader fileReader = new FileReader(fileName);
