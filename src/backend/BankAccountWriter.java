@@ -1,7 +1,7 @@
 //Class for taking the current accounts withing the system and creating
 //the new current accounts and master accounts files
 //Created from main and interfaces with the Accounts class
-package backend;
+//package backend;
 
 //import java.util.ArrayList;
 import java.util.Map;
@@ -23,9 +23,9 @@ public BankAccountWriter(Map<Integer, Account> newAccounts){
 
 //create the new account files
 //argument of if you are creating the master or current
-public void writeAccounts(boolean master){
+public void writeAccounts(boolean master, String masterName, String currentName){
 	//create file for master or current based on our argument
-	String filename = (master==true) ? "MasterBankAccounts.dat" : "CurrentBankAccounts.dat";
+	String filename = (master==true) ? masterName : currentName;
 
 	try{
 		//open up file using decided name

@@ -2,7 +2,7 @@
 //Program can be compiled using "make" and run using "make run"
 //Input files are "OldMasterBankAccounts.dat" and "Transactions.trans"
 //Output files are "CurrentBankAccounts.dat" and "MasterBankAccounts.dat"
-package backend;
+//package backend;
 
 import java.util.Map;
 
@@ -30,9 +30,9 @@ public static void main(String[] args){
 	//pass in the new accounts information that we created from the transaction handler
 	BankAccountWriter bankWriter = new BankAccountWriter(newAccounts);
 	//Write new master bank accounts file
-	bankWriter.writeAccounts(true);
+	bankWriter.writeAccounts(true, args[2], args[3]);
 	//Write new current bank accounts file
-	bankWriter.writeAccounts(false);
+	bankWriter.writeAccounts(false, args[2], args[3]);
 
 
 	System.out.println("Execution Complete");
