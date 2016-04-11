@@ -8,13 +8,16 @@ import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Scanner;
 import java.util.StringTokenizer;
+import java.util.Map.Entry;
 
 public class CurrentData {
 
-//Arraylist used to store the accounts within the system
-public ArrayList<Account> accounts = new ArrayList<Account>();
+//Map used to store the accounts within the system
+public Map<Integer, Account> accounts = new HashMap<Integer, Account>();
 //Arraylist for storing all the transactions being processed today
 public ArrayList<Transaction> transactions = new ArrayList<Transaction>();
 
@@ -22,8 +25,6 @@ public ArrayList<Transaction> transactions = new ArrayList<Transaction>();
 public void getCurrentAccounts(){
 	boolean active, student;
 	String line = null;
-	String[] strArray = new String[7];
-	accounts.add(0, new Account(00000,"ADMIN ACC",true,0,0,false));
 	
 	Scanner in = new Scanner(System.in);
 	System.out.println("Enter Accounts File Name: ");
@@ -35,22 +36,29 @@ public void getCurrentAccounts(){
 
 		//tokenize each line of file into the data we need for the Account class
 		while((line = bufferedReader.readLine()) != null) {
-			int i = 0;
+			String[] strArray = new String[15];
+			int i = 0, j = 1;
 			StringTokenizer st = new StringTokenizer(line);
 		    while (st.hasMoreTokens()) {
 		    	strArray[i] = st.nextToken();
 		    	i++;
 		    }
-		    strArray[1] = strArray[1] + " " + strArray[2];
+		    while(Character.isLetter(strArray[j].charAt(0))){
+		    	j++;
+		    }
+		    j--;
+		    for(int k = 2; k < j; k++){
+		    	strArray[1] = strArray[1] + " " + strArray[k];
+		    }
 	
-			if ( strArray[3].equals("A")) {
+			if ( strArray[j].equals("A")) {
 				active = true;
 			}
 			else {
 				active = false;
 			}
 
-			if ( strArray[6].equals("S")) {
+			if ( strArray[j+3].equals("S")) {
 				student = true;
 			}
 			else {
@@ -60,9 +68,10 @@ public void getCurrentAccounts(){
 			//Create a new Account from the data
 			//0 - AccountNum, 1 - AccountName, 4 - Balance, 5 - Total Transaction
 			Account account = new Account(Integer.parseInt(strArray[0]), strArray[1], active,
-			                              Double.parseDouble(strArray[4]), Integer.parseInt(strArray[5]), student);
-			//Add new account to the accounts list
-			accounts.add(Integer.parseInt(strArray[0]), account);
+			                              Double.parseDouble(strArray[j+1]), Integer.parseInt(strArray[j+2]), student);
+			
+			//Add new account to the accounts map
+			accounts.put(Integer.parseInt(strArray[0]), account);
 		}
 		bufferedReader.close();
 		System.out.println("Accounts Successfully Read In");
@@ -79,7 +88,6 @@ public void getCurrentAccounts(){
 //Read in the transaction files and add them to the transactions log
 public void getTransactions(){
 	String line = null;
-	String[] strArray = new String[6];
 	transactions.add(0, null);
 	
 	Scanner in = new Scanner(System.in);
@@ -89,21 +97,33 @@ public void getTransactions(){
 	try {
 		FileReader fileReader = new FileReader(fileName);
 		BufferedReader bufferedReader = new BufferedReader(fileReader);
-
+		
 		//tokenize each line of file into the data we need for the Account class
 		while((line = bufferedReader.readLine()) != null) {
-			int i = 0;
+			String[] strArray = new String[14];
+			int i = 0, j = 1;
 			StringTokenizer st = new StringTokenizer(line);
 		    while (st.hasMoreTokens()) {
 		    	strArray[i] = st.nextToken();
 		    	i++;
 		    }
-		    strArray[1] = strArray[1] + " " + strArray[2];
+		    while(Character.isLetter(strArray[j].charAt(0))){
+		    	j++;
+		    }
+	
+		    for(int k = 2; k < j; k++){
+		    	strArray[1] = strArray[1] + " " + strArray[k];
+		    }
+		    
+		    
+		    if (strArray[j+2] == null){
+		    	strArray[j+2] = "__";
+		    }
 
 			//Create a new transaction from the information read in
 			//0 - TransNum, 1 - Name, 3 - AccountNum, 4 - Money, 5 - MiscInfo
 			Transaction trans = new Transaction(Integer.parseInt(strArray[0]), strArray[1],
-			                                    Integer.parseInt(strArray[3]), Double.parseDouble(strArray[4]), strArray[5]);
+			                                    Integer.parseInt(strArray[j]), Double.parseDouble(strArray[j+1]), strArray[j+2]);
 
 			//Add transaction to our transaction list
 			transactions.add(trans);
@@ -117,24 +137,6 @@ public void getTransactions(){
 	}
 	catch(IOException ex) {
 		System.out.println("Error reading file transaction file.");
-	}
-}
-
-//Helper function for displaying all of the currently read in accounts
-public void printAccounts(){
-	int i = 1;
-	while(i < accounts.size()) {
-		System.out.println(accounts.get(i).toString(true));
-		i++;
-	}
-}
-
-//helper function for displaying all the currently read in transactions
-public void printTransactions(){
-	int i = 1;
-	while(i < transactions.size()) {
-		System.out.println(transactions.get(i));
-		i++;
 	}
 }
 }

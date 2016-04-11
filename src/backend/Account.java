@@ -20,9 +20,11 @@ public Account(int num, String name, boolean active, double balance, int transac
 	this.isStudent = student;
 }
 
+public Account() {}
+
 //converts the account to the format required by the account file
 //argument is if it should be formated for master accounts or current accounts
-public String toString(boolean master){
+public String myToString(boolean master){
 	String theString;
 	String formattedName;
 	//create a string appended with underscores for proper formatting

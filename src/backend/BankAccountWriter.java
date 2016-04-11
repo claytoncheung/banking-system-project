@@ -3,7 +3,8 @@
 //Created from main and interfaces with the Accounts class
 package backend;
 
-import java.util.ArrayList;
+//import java.util.ArrayList;
+import java.util.Map;
 import java.io.BufferedWriter;
 import java.io.IOException;
 import java.io.OutputStreamWriter;
@@ -13,10 +14,9 @@ import java.io.Writer;
 public class BankAccountWriter {
 
 //List of accounts to write
-private ArrayList<Account> accounts;
-
+private Map<Integer, Account> accounts;
 //BanckAccountWriter Constructor
-public BankAccountWriter(ArrayList<Account> newAccounts){
+public BankAccountWriter(Map<Integer, Account> newAccounts){
 	//assign the accounts to be used from the parameter
 	accounts = newAccounts;
 }
@@ -30,10 +30,11 @@ public void writeAccounts(boolean master){
 	try{
 		//open up file using decided name
 		Writer writer = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(filename), "utf-8"));
+		Object[] array =  accounts.values().toArray();
 		//iterate through all accounts and write them to file
-		for(Account acc : accounts) {
+		for(Object acc : array) {
 			if(acc!=null) {
-				writer.write(acc.toString(master)+"\n");
+				writer.write(((Account) acc).myToString(master)+"\n");
 			}
 		}
 		writer.close();

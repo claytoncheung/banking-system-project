@@ -4,20 +4,21 @@
 package backend;
 
 import java.util.ArrayList;
+import java.util.Map;
 
 public class TransactionHandler {
 
 //Working set of accounts
-private ArrayList<Account> accounts;
+private Map<Integer, Account> accounts;
 //The transactions to process
 private ArrayList<Transaction> transactions;
 //The account we are currently applying transactions to
 private Account curAcc;
-private boolean adminSession;
-private int transfer = 1;
+private boolean adminSession, transferred = false;
+private int transfer = 1, currTrans = 0;
 
 //constructor which takes in the transactions to process
-public TransactionHandler(ArrayList<Account> accs,ArrayList<Transaction> trans){
+public TransactionHandler(Map<Integer, Account> accs,ArrayList<Transaction> trans){
 	//set our current working accounts to the ones passed in
 	accounts = accs;
 	//set current transactions to those passed in
@@ -44,89 +45,214 @@ public void ChargeAccount(){
 	}
 }
 
+public double checkFee(){
+	if(adminSession){
+		return 0;
+	}
+	else if(curAcc.isStudent){
+		return 0.05;
+	}
+	else  {
+		return 0.10;
+	}
+}
+
 //Handle all transactions and update the accounts list
 //Once complete return the new modified accounts list
-public ArrayList<Account> HandleTransactions(){
+public Map<Integer, Account> HandleTransactions(){
 	//iterate over each transaction
 	for(Transaction trans : transactions) {
 		//Check if the transaction exists
 		if(trans!=null) {
 			//Check what type of transaction we are dealing with
-
-      //-----------------------
-      // Not Fully Complete
-      //  Just Infrastructure
-      //    For Next Phase!!!
-      //------------------------
-
+			currTrans++;
 			switch(trans.transType) {
 //End of session
 			case 0:
-				System.out.println(curAcc.toString(true) + " Session Ended");
+				System.out.println(curAcc.myToString(true) + " Session Ended");
 				//End our session with current account;
 				curAcc = null;
 				break;
 //Withdrawal
 			case 1:
-				curAcc.currentBalance -= trans.moneyInvolved;
-				IncTrans();
-				ChargeAccount();
-				System.out.println("Withdrawl Successful");
-				break;
+				try{
+					if (accounts.get(trans.accountNum).currentBalance >= trans.moneyInvolved + checkFee() && accounts.get(trans.accountNum).isActive){
+						accounts.get(trans.accountNum).currentBalance -= trans.moneyInvolved;
+						IncTrans();
+						ChargeAccount();
+						System.out.println("Withdrawl Successful");
+						break;
+					}
+					else {
+						System.out.println("Withdrawl Unsuccessful");
+						break;
+					}
+				}
+				catch(NullPointerException e){
+					System.out.println("Account doesn't exist");
+					break;
+				}
+				catch(IndexOutOfBoundsException e){
+					System.out.println("Account doesn't exist");
+					break;
+				}
 //Transfer -- 
 			case 2:
-				if ( (transfer % 2) != 0){
-					accounts.get(trans.accountNum).currentBalance -= trans.moneyInvolved;
-					ChargeAccount();
-					IncTrans();
+				try{
+					if ( (transfer % 2) != 0){
+						if (accounts.get(trans.accountNum).currentBalance >= trans.moneyInvolved + checkFee() && accounts.get(trans.accountNum).isActive){
+							accounts.get(trans.accountNum).currentBalance -= trans.moneyInvolved;
+							IncTrans();
+							ChargeAccount();
+							transferred = true;
+							System.out.println("Money Sent");
+							transfer++;
+							break;
+						}
+						else {
+							transfer++;
+							System.out.println("Money Not Sent");
+							break;
+						}
+					}
+					else {
+						if (transferred && accounts.get(trans.accountNum).isActive){
+							accounts.get(trans.accountNum).currentBalance += trans.moneyInvolved;
+							transferred = false;
+							System.out.println("Money Received");
+							transfer++;
+							break;
+						}
+						else {
+							accounts.get(transactions.get(currTrans-1).accountNum).currentBalance += trans.moneyInvolved + checkFee();
+							System.out.println("Money Not Received");
+							transfer++;
+							break;
+						}
 				}
-				else {
-					accounts.get(trans.accountNum).currentBalance += trans.moneyInvolved;
 				}
-				System.out.println("Money Transfered");
-				transfer++;
-				break;
+				catch(NullPointerException e){
+					System.out.println("Account doesn't exist");
+					break;
+				}
+				catch(IndexOutOfBoundsException e){
+					System.out.println("Account doesn't exist");
+					break;
+				}
 //Paybill
 			case 3:
-				curAcc.currentBalance -= trans.moneyInvolved;
-				ChargeAccount();
-				IncTrans();
-				System.out.println("Bills Paid");
-				break;
+				try{
+					if (accounts.get(trans.accountNum).currentBalance >= trans.moneyInvolved + checkFee() && accounts.get(trans.accountNum).isActive){
+						accounts.get(trans.accountNum).currentBalance -= trans.moneyInvolved;
+						IncTrans();
+						ChargeAccount();
+						System.out.println("Bill Paid");
+						break;
+					}
+					else {
+						System.out.println("Bill Not Paid");
+						break;
+					}
+				}
+				catch(NullPointerException e){
+					System.out.println("Account doesn't exist");
+					break;
+				}
+				catch(IndexOutOfBoundsException e){
+					System.out.println("Account doesn't exist");
+					break;
+				}
 //Deposit
 			case 4:
-		        curAcc.currentBalance+=trans.moneyInvolved;
-		        IncTrans();
-		        ChargeAccount();
-				System.out.println("Deposit Successful");
-				break;
+				try{
+					if (accounts.get(trans.accountNum).isActive){
+				        curAcc.currentBalance+=trans.moneyInvolved;
+				        IncTrans();
+				        ChargeAccount();
+						System.out.println("Deposit Successful");
+						break;
+					}
+					else {
+						System.out.println("Deposit Unsuccessful");
+						break;
+					}
+				}
+				catch(NullPointerException e){
+					System.out.println("Account doesn't exist");
+					break;
+				}
+				catch(IndexOutOfBoundsException e){
+					System.out.println("Account doesn't exist");
+					break;
+				}
 //Create - Admin -- 
 			case 5:
 				int newNum = accounts.size();
 				Account newAccount = new Account(newNum, trans.accountName, true, trans.moneyInvolved, 0, false);
-				accounts.add(newNum, newAccount);
+				accounts.put(newNum, newAccount);
 				System.out.println("Account Created");
 				break;
 //Delete - Admin
 			case 6:
-				accounts.remove(trans.accountNum);
-				System.out.println("Account Deleted");
-				break;
+				try{
+					System.out.println(trans.accountNum);
+					System.out.println(accounts.remove(trans.accountNum));
+					System.out.println("Account Deleted");
+					break;
+				}
+				catch(NullPointerException e){
+					System.out.println("Account doesn't exist");
+					break;
+				}
+				catch(IndexOutOfBoundsException e){
+					System.out.println("Account doesn't exist");
+					break;
+				}
 //Disable - Admin
 			case 7:
-				accounts.get(trans.accountNum).isActive = false;
-				System.out.println("Account Disabled");
-				break;
+				try{
+					accounts.get(trans.accountNum).isActive = false;
+					System.out.println("Account Disabled");
+					break;
+				}
+				catch(NullPointerException e){
+					System.out.println("Account doesn't exist");
+					break;
+				}
+				catch(IndexOutOfBoundsException e){
+					System.out.println("Account doesn't exist");
+					break;
+				}
 //ChangePlan - Admin
 			case 8:
-				accounts.get(trans.accountNum).isStudent = !accounts.get(trans.accountNum).isStudent;
-				System.out.println("Plan Changed");
-				break;
+				try{
+					accounts.get(trans.accountNum).isStudent = !accounts.get(trans.accountNum).isStudent;
+					System.out.println("Plan Changed");
+					break;
+				}
+				catch(NullPointerException e){
+					System.out.println("Account doesn't exist");
+					break;
+				}
+				catch(IndexOutOfBoundsException e){
+					System.out.println("Account doesn't exist");
+					break;
+				}
 //Enable Account - Admin -- 
 			case 9:
-				accounts.get(trans.accountNum).isActive = true;
-				System.out.println("Account Enabled");
-				break;
+				try{
+					accounts.get(trans.accountNum).isActive = true;
+					System.out.println("Account Enabled");
+					break;
+				}
+				catch(NullPointerException e){
+					System.out.println("Account doesn't exist");
+					break;
+				}
+				catch(IndexOutOfBoundsException e){
+					System.out.println("Account doesn't exist");
+					break;
+				}	
 //Login
 			case 10:
 				//set current working account based on login
@@ -140,7 +266,7 @@ public ArrayList<Account> HandleTransactions(){
 						adminSession = false;
 					}
 					//display which account is logged in
-					System.out.println(curAcc.toString(true) + " Session Started "+((adminSession==true) ? "Admin" : "Standard"));
+					System.out.println(curAcc.myToString(true) + " Session Started "+((adminSession==true) ? "Admin" : "Standard"));
 				}else{
 					System.out.println("Invalid Account");
 				}

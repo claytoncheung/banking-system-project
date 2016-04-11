@@ -3,7 +3,8 @@
 //Input files are "OldMasterBankAccounts.dat" and "Transactions.trans"
 //Output files are "CurrentBankAccounts.dat" and "MasterBankAccounts.dat"
 package backend;
-import java.util.ArrayList;
+
+import java.util.Map;
 
 public class main {
 
@@ -15,12 +16,12 @@ public static void main(String[] args){
 	data.getCurrentAccounts();
 	//get the transactions from the transaction log
 	data.getTransactions();
-
+	
 
 	//Process transactions that have been read in by currentData
 	TransactionHandler transHandler = new TransactionHandler(data.accounts, data.transactions);
 	//Create a new list to store the updated accounts
-	ArrayList<Account> newAccounts;
+	Map<Integer, Account> newAccounts;
 	//process transactions and return the new accounts information
 	newAccounts = transHandler.HandleTransactions();
 
