@@ -195,8 +195,7 @@ public Map<Integer, Account> HandleTransactions(){
 //Delete - Admin
 			case 6:
 				try{
-					System.out.println(trans.accountNum);
-					System.out.println(accounts.remove(trans.accountNum));
+					accounts.remove(trans.accountNum);
 					System.out.println("Account Deleted");
 					break;
 				}
