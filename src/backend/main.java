@@ -2,7 +2,7 @@
 //Program can be compiled using "make" and run using "make run"
 //Input files are "OldMasterBankAccounts.dat" and "Transactions.trans"
 //Output files are "CurrentBankAccounts.dat" and "MasterBankAccounts.dat"
-//package backend;
+package backend;
 
 import java.util.Map;
 
