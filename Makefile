@@ -49,7 +49,7 @@ HAMCREST_JAR_URL = \
 JUNIT_JAR_URL = \
 	http://search.maven.org/remotecontent?filepath=junit/junit/4.12/junit-4.12.jar
 
-.PHONY: all clean test test_frontend test_backend
+.PHONY: all clean test test_frontend test_backend week
 
 all: bin/frontend/frontend bin/backend/main.class
 
@@ -68,6 +68,9 @@ test_backend: hamcrest-core-1.3.jar junit-4.12.jar bin/backend/main.class
 	@javac -classpath ".:bin:junit-4.12.jar:hamcrest-core-1.3.jar" $(BACKEND_TEST_JAVA)
 	@java -classpath ".:bin:junit-4.12.jar:hamcrest-core-1.3.jar" org.junit.runner.JUnitCore $(BACKEND_TEST_CLASSES)
 
+week:
+	@bash -c "cd transaction-inputs && ./run_week.sh"
+	
 hamcrest-core-1.3.jar:
 	wget -O $@ $(HAMCREST_JAR_URL)
 
