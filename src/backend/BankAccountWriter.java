@@ -3,7 +3,10 @@
 //Created from main and interfaces with the Accounts class
 package backend;
 
+import java.util.Iterator;
 import java.util.Map;
+import java.util.Set;
+import java.util.TreeMap;
 import java.io.BufferedWriter;
 import java.io.IOException;
 import java.io.OutputStreamWriter;
@@ -29,13 +32,21 @@ public void writeAccounts(boolean master){
 	try{
 		//open up file using decided name
 		Writer writer = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(filename), "utf-8"));
-		Object[] array =  accounts.values().toArray();
-		//iterate through all accounts and write them to file
-		for(Object acc : array) {
-			if(acc!=null) {
-				writer.write(((Account) acc).myToString(master)+"\n");
-			}
+		Map<Integer, Account> map = new TreeMap<Integer, Account>(accounts);
+		Set set = map.entrySet();
+		Iterator iterator = set.iterator();
+		while(iterator.hasNext()){
+			Map.Entry me = (Map.Entry)iterator.next();
+			writer.write(((Account) me.getValue()).myToString(master)+"\n");
 		}
+		
+//		Object[] array =  accounts.values().toArray();
+//		//iterate through all accounts and write them to file
+//		for(Object acc : array) {
+//			if(acc!=null) {
+//				writer.write(((Account) acc).myToString(master)+"\n");
+//			}
+//		}
 		writer.close();
 		System.out.println(((master==true) ? "Master" : "Current") + " Accounts File Written Successfully");
 	}
