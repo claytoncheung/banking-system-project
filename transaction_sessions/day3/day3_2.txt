@@ -1,11 +1,4 @@
 login
-standard
-Delete Account
-deposit
-13
-100.00
-logout
-login
 admin
 enable
 Disable Account

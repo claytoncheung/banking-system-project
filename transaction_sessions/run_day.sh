@@ -20,7 +20,7 @@ function run_session() {
 function run_backend() {
   pushd ../../ > /dev/null
   # Run the backend
-  java -cp bin/ backend.main transaction_sessions/day$day/MasterBankAccounts.dat transaction_sessions/day$day/merged-day$day.trans > /dev/null 2>&1
+  java -cp bin/ backend.main transaction_sessions/day$day/MasterBankAccounts.dat transaction_sessions/day$day/merged-day$day.trans 2>&1
   
   if [ $? -ne 0 ]
   then

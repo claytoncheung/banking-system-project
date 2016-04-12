@@ -1,8 +1,5 @@
 login
 admin
-enable
-Enable Account
-10
 changeplan
 New Account
 2

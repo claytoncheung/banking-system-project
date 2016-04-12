@@ -8,9 +8,6 @@
 10                      00000 00000.00 A 
 08 New Account          00002 00000.00   
 00                      00000 00000.00   
-10 Delete Account       00000 00000.00 S 
-04 Delete Account       00013 00100.00   
-00 Delete Account       00000 00000.00   
 10                      00000 00000.00 A 
 09 Disable Account      00009 00000.00   
 00                      00000 00000.00   

@@ -7,10 +7,9 @@
 00007 Very Very Long Name  A 00175.47 0000 N
 00008 Change Plan          A 00150.83 0000 S
 00009 Disable Account      D 00100.00 0000 N
-00010 Enable Account       D 00025.01 0000 N
+00010 Enable Account       A 00015.01 0000 N
 00011 Deposit Account      A 00467.20 0001 N
 00012 Withdraw Account     A 00030.00 0000 N
-00013 Delete Account       A 00005.50 0000 N
 00014 Clark Kent           A 99899.89 0001 N
 00015 Bruce Wayne          A 00374.90 0001 N
 00016 Barry Allen          A 00999.90 0000 N

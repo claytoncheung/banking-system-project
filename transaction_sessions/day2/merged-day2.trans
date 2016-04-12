@@ -46,3 +46,7 @@
 00 Deposit Account      00000 00000.00   
 10                      00000 00000.00 A 
 07 Enable Account       00010 00000.00   
+09 Enable Account       00010 00000.00   
+01 Enable Account       00010 00010.00   
+06 Delete Account       00013 00000.00   
+00                      00000 00000.00   

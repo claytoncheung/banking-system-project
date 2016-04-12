@@ -7,13 +7,6 @@ deposit
 logout
 login
 standard
-Delete Account
-deposit
-13
-500.00
-logout
-login
-standard
 John Random New
 deposit
 6
