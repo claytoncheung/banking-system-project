@@ -3,7 +3,7 @@ standard
 Bruce Wayne
 withdrawal
 15
-500.00
+100.00
 logout
 login
 standard
@@ -19,4 +19,3 @@ changeplan
 New Account
 2
 logout
-
