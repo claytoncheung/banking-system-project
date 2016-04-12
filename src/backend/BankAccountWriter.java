@@ -39,14 +39,6 @@ public void writeAccounts(boolean master){
 			Map.Entry me = (Map.Entry)iterator.next();
 			writer.write(((Account) me.getValue()).myToString(master)+"\n");
 		}
-		
-//		Object[] array =  accounts.values().toArray();
-//		//iterate through all accounts and write them to file
-//		for(Object acc : array) {
-//			if(acc!=null) {
-//				writer.write(((Account) acc).myToString(master)+"\n");
-//			}
-//		}
 		writer.close();
 		System.out.println(((master==true) ? "Master" : "Current") + " Accounts File Written Successfully");
 	}
